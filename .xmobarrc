@@ -32,10 +32,11 @@ Config { font = "DejaVu Sans Mono 9"
                     , Run Com "uname" ["-s","-r"] "" 36000
                     , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
                     , Run Com "sh" [".config/xmobar/playing.sh"] "playing" 10
+                    , Run Com "sh" [".config/xmobar/volume.sh"] "volume" 1
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%cpu% | <box>%memory% * %swap%</box> | %eth0% - %eth1% }\
+       , template = "%cpu% | <box>%memory% * %swap%</box> | %eth0% | volume: %volume% }\
                     \ %playing% \
                     \{ <fc=#ee9a00><fn=1>%date%</fn></fc>"
        }
